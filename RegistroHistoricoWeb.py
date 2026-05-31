@@ -17,7 +17,7 @@ USUARIO = os.getenv("USUARIO")
 SENHA = os.getenv("SENHA")
 
 # Links da nuvem e caminhos locais
-URL_BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQJKC7l5O3GUGp6oeimYQ3cqd-7pV3DDLnE13L-kTFgM2oUMwRyxrPxKzYVHq2gAUvbCPI2IMaNUVmF/pub?output=csv'
+URL_BASE = 'https://docs.google.com/spreadsheets/d/e/URLDOGOOGLESHEETS/pub?output=csv'
 CAMINHO_FILA_LOCAL = "fila_automacao.xlsx"
 
 # Dicionário para corrigir a mira da combobox caso o Protheus tenha itens duplicados (ex: descer a seta 1x)
@@ -78,7 +78,7 @@ def run(playwright: Playwright, df_dados, df_sincronizado, caminho_fila) -> None
     try:
         # --- ETAPA DE LOGIN E AMBIENTE ---
         print("\n--- Acessando o Protheus ---")
-        page.goto("https://selbetti174877.protheus.cloudtotvs.com.br:4010/webapp/")
+        page.goto("https://URLDOPROTHEUSWEB")
         page.get_by_role("group", name="Ambiente no servidor").get_by_role("combobox").select_option("CS86R7_PROD")
         page.get_by_role("button", name="Ok").click()
 
